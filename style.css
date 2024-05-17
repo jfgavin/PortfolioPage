@@ -1,0 +1,258 @@
+:root {
+    --mode-swap: 0.5s ease;
+    --primary: #ec4899;
+    --secondary: #c026d3;
+    --accent: #8b5cf6;
+    --neutral: #4f46e5;
+    --base100: #111827;
+    --info: #fcd34d;
+    --success: #a3e635;
+    --warning: #fb923c;
+    --error: #f87171;
+    --text: lightgrey;
+}
+
+@font-face {
+    font-family: Plumpelo;
+    src: url(fonts/PlumpeloV2Outlined.ttf);
+}
+@font-face {
+    font-family: FoundersGrotesk;
+    src: url(fonts/TestFoundersGroteskText-Medium-BF66175e96eb196.otf);
+}
+
+html,
+body {
+    max-width: 2000px;
+    height: 100vh;
+    background-color: var(--base100);
+    font-family: "FoundersGrotesk", sans-serif;
+    color: var(--text);
+    scroll-behavior: smooth;
+}
+
+/* --HEADER-- */
+
+#fixed-header{
+    position: fixed;
+    top: 0;
+    z-index: -50;
+    width: 100%;
+    pointer-events: none;
+    background-color: var(--primary);
+}
+
+#navbar{
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.7rem;
+    width: 100%;
+    height: 40px;
+    margin: 0 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    align-items: center;    /*vertical align*/
+    justify-content: center;    /*horizontal align*/
+    color: var(--primary);
+}
+
+#nav-message{
+    transform:scaleX(0.6);
+    text-wrap: nowrap;
+}
+
+#nav-spacer{
+    width: 70%;
+}
+.page-links{
+    transform:scaleX(0.6);
+    position: relative;
+    
+}
+
+.page-links a::after{
+    content: "";
+    width: 0;
+    height: 3px;
+    background: var(--secondary);
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    transition: all 500ms;
+}
+
+.page-links a:hover::after{
+    width: 100%;
+}
+
+
+
+/* --MARQUEE-- */
+
+.marquee-stack{
+    position:relative;
+    width: 100%;
+    margin-bottom: -370px;
+}
+
+.marquee-img{
+    display: flex;
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+    transform: scale(0.69) translateY(-270px);
+    -webkit-mask: linear-gradient(90deg, transparent, white, transparent);
+    mask: linear-gradient(90deg, transparent, white, transparent);
+    background-color: var(--secondary);
+
+}
+
+.marquee-container{
+    width: 100%;
+    position: absolute;
+    display: inline-flex;
+    white-space: nowrap;
+    padding: 245px 0 280px 0;
+    overflow:hidden;
+    background-color: var(--primary);
+}
+
+.marquee-text{
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: "Plumpelo", sans-serif;
+    font-weight: 700;
+    font-size: 18rem;
+    color: var(--accent);
+    animation: marquee 120s linear infinite;
+}
+
+#marquee-shimmer, #marquee-shimmer img{
+    position: absolute;
+    z-index: -1;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(-100%) scaleY(2.8);
+    }
+    to {
+        transform: translateX(0%) scaleY(2.8);
+    }
+}
+
+/* --PROFICIENCIES-- */
+#tile-container{
+    display: inline-flex;
+    gap: 10px;
+}
+
+.tile{
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    width: auto;
+    flex-direction: column;
+    width: 5rem;
+    background-color: var(--accent);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+.tile img{
+    height: 80px;
+}
+
+/* --PROJECTS-- */
+#projects-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.proj-img{
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.proj-img-actual{
+    display: block;
+}
+
+.image-overlay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.image-overlay:hover{
+
+    opacity:0.9;
+}
+
+.image-overlay > *{
+    visibility: hidden;
+    transform: translateY(0);
+    margin: 10px;
+
+}
+
+.image-overlay:hover > *{
+    visibility: visible;
+    transform: translateY(-20px);
+    transition: transform 0.25s;
+}
+
+
+.image-title{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.image-description{
+    margin-top: 0.25rem;
+}
+
+/* General */
+
+h1{
+    text-align: center;
+}
+
+hr{
+    border-top: 1px solid var(--primary);
+
+}
+
+a{
+    text-decoration: none;
+    color: var(--primary);
+}
+a:hover 
+{ 
+    color: var(--secondary);
+} 
+
+p{
+    font-size: 14px;
+}
+
+img{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
