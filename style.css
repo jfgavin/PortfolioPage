@@ -144,6 +144,7 @@ body {
 
 /* --PROFICIENCIES-- */
 #tile-container{
+    margin-left: 10px;
     display: inline-flex;
     gap: 10px;
 }
@@ -160,6 +161,7 @@ body {
     padding: 0.5rem;
     align-items: center;
     justify-content: center;
+    border-bottom: medium solid var(--secondary);
 }
 .tile img{
     height: 80px;
@@ -175,8 +177,10 @@ body {
     position: relative;
     display: flex;
     overflow: hidden;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0 10px 10px 10px;
+    max-width: 400px;
+    height: 400px;
+    border-radius: 10px;
 }
 
 .proj-img-actual{
@@ -248,7 +252,7 @@ a:hover
 } 
 
 p{
-    font-size: 14px;
+    font-size: 16px;
 }
 
 img{
