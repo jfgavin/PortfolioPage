@@ -9,6 +9,10 @@
     <script defer src="scripts/image_shimmer.js"></script>
 </head>
 <body>
+    <div id="loading-wrapper">
+        <div id="loading-spinner"></div>
+    <p>Loading...</p>
+    </div>
     <header class="fixed-header">
         <nav id="navbar">
             <div id="nav-message">
@@ -20,7 +24,7 @@
                 <a href="#about">About</a>
             </div>
             <div class="page-links">
-                <a href="#contact">Contact</a>
+                <a href="#contacts">Contact</a>
             </div>
             
         </nav>
@@ -102,7 +106,7 @@
                         Arcade Buttons
                     </div>
                     <p class="image-description">
-                        For the arcade machine I build, I manufactured custom PCBs to illuminate the buttons with RGB LEDs. The LED controller was programmed to automatically illuminate button layouts for the corresponding game. 
+                        For the arcade machine I built, I manufactured custom PCBs to illuminate the buttons with RGB LEDs. The LED controller was programmed to automatically illuminate button layouts for the corresponding game. 
                     </p>
                 </div>
             </div>
@@ -113,7 +117,7 @@
                         PCB Design
                     </div>
                     <p class="image-description">
-                        I have many project where PCBs were essential. I am competent in EasyEDA, KiCad and EAGLE EDA from years of use, and familiar with the component selection and manufacturing process.
+                        I have many projects where PCBs were essential. I am competent in EasyEDA, KiCad and EAGLE EDA and familiar with the component selection and manufacturing process.
                     </p>
                 </div>
             </div>
@@ -124,7 +128,7 @@
                         Electro Mechanical Systems
                     </div>
                     <p class="image-description">
-                        Before pursuing my degree, I gained an understanding for computer fundamentals from the workings of a vintage pinball machine. Where CPUs and RAM are now commonplace in computers, a 'score motor' and solenoid latches brought these machines to life. 
+                        Before beginning my degree, I gained an understanding for computer fundamentals from the workings of a vintage pinball machine. Where CPUs and RAM are now commonplace in computers, a 'score motor' and solenoid latches brought these machines to life. 
                     </p>
                 </div>
             </div>
@@ -135,7 +139,7 @@
                         CNC Robotics
                     </div>
                     <p class="image-description">
-                        Using MCU driven stepper motors I automated an existing system. This lead to faster production, but most importantly; precision. 
+                        Using MCU driven stepper motors I automated an existing system for product assembly. This lead to faster production, but most importantly; precision. 
                     </p>
                 </div>
             </div>
@@ -143,9 +147,20 @@
     </section>
     <hr>
     <footer>
-        <div class="contact" id="contact">
-            01010101
+        <h1>Contact Me</h1>
+        <div id="contacts">
+
+            <div class="contact">
+                <em class="contact-type">email:</em>
+                jfgavin@gmail.com
+            </div>
         </div>
     </footer>
+
+    <script>
+        window.addEventListener('load', function() {
+          document.getElementById('loading-wrapper').style.display = 'none';
+        });
+    </script>
 </body>
 </html>
